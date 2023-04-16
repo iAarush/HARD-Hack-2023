@@ -1,4 +1,4 @@
-const int flameSensorPin = A0;
+const int flameSensorPin = A0; // Uses analog (A0) pin, not digital (D0) pin
 
 void setup()  {
   Serial.begin(9600);  
