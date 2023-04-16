@@ -15,9 +15,9 @@ void loop() {
  */
  int getFireDistance() {
   int distance = analogRead(flameSensorPin);
-//  if (distance < 41) {
+//  if (distance < 400) {
 //    Serial.println("Fire in less than 1.5 ft");
-//  } else if (distance < 82) {
+//  } else if (distance < 800) {
 //    Serial.println("Fire between 1 and 3 ft");
 //  } else {
 //    Serial.println("No fire");
