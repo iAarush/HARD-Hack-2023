@@ -74,10 +74,10 @@ int getBrightness() {
 int getGasAmount() {
   int gasAmount = analogRead(gasSensorPin);
   if (gasAmount < 400) {
-    Serial.print(", LPG detected: ");
+    Serial.print("LPG detected: ");
     Serial.print(gasAmount); 
   } else {
-    Serial.print(", No LPG detected: ");
+    Serial.print("No LPG detected: ");
     Serial.println(gasAmount); 
   }
   return analogRead(gasSensorPin);
@@ -89,13 +89,13 @@ void setup() {
 
 void loop() {
   // Display temperature
-  Serial.print(", Temperature (K): "); 
+  Serial.print("Temperature (K): "); 
   Serial.print(getTemperature());
   //Serial.println(" K");
   Serial.print(",");
 
   // Display fire distance
-  Serial.print(", Fire distance: "); 
+  Serial.print("Fire distance: "); 
   Serial.print(getFireDistance());
   Serial.print(",");
 
@@ -104,7 +104,7 @@ void loop() {
   Serial.print(",");
 
   // Display brightness
-  Serial.print(", Brightness: "); 
+  Serial.print("Brightness: "); 
   Serial.print(getBrightness());
   Serial.print(",");
 
