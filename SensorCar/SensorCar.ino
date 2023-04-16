@@ -43,12 +43,13 @@ double getTemperature() {
 
 int getRaindropAmount() {
   int raindropAmount = analogRead(raindropPin);
-  if (raindropAmount < 300)
-    Serial.print(", Wet: "); 
+  if (raindropAmount < 300) {
+    Serial.print("Wet: "); 
     Serial.print(raindropAmount);
-  else
-    Serial.print(", Dry: ");
+  } else { 
+    Serial.print("Dry: ");
     Serial.print(raindropAmount);
+  }
   return raindropAmount;
 }
 
@@ -72,12 +73,13 @@ int getBrightness() {
 
 int getGasAmount() {
   int gasAmount = analogRead(gasSensorPin);
-  if (gasAmount < 400)
+  if (gasAmount < 400) {
     Serial.print(", LPG detected: ");
     Serial.print(gasAmount); 
-  else
+  } else {
     Serial.print(", No LPG detected: ");
     Serial.println(gasAmount); 
+  }
   return analogRead(gasSensorPin);
 }
 
