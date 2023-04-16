@@ -29,6 +29,7 @@ double getTemperature() {
  */
  int getFireDistance() {
   int distance = analogRead(flameSensorPin);
+  /*
   if (distance < 400) {
     Serial.println("Fire in less than 1.5 ft");
   } else if (distance < 800) {
@@ -36,20 +37,22 @@ double getTemperature() {
   } else {
     Serial.println("No fire");
   }
+  */
   return distance;
  }
 
 int getRaindropAmount() {
   int raindropAmount = analogRead(raindropPin);
   if (raindropAmount < 300)
-    Serial.println("Wet");
+    Serial.println("Wet: " + raindropAmount);
   else
-    Serial.println("Dry");
+    Serial.println("Dry: " + raindropAmount);
   return raindropAmount;
 }
 
 int getBrightness() {
   int brightness = analogRead(lightSensorPin);
+  /*
   if (brightness < 10) {
     Serial.println(" - Dark");
   } else if (brightness < 200) {
@@ -61,15 +64,16 @@ int getBrightness() {
   } else {
     Serial.println(" - Very bright");
   }
+  */ 
   return brightness;
 }
 
 int getGasAmount() {
   int gasAmount = analogRead(gasSensorPin);
   if (gasAmount < 400)
-    Serial.println("LPG detected");
+    Serial.println("LPG detected: " + gasAmount);
   else
-    Serial.println("No LPG detected");
+    Serial.println("No LPG detected: " + gasAmount);
   return analogRead(gasSensorPin);
 }
 
@@ -79,20 +83,22 @@ void setup() {
 
 void loop() {
   // Display temperature
-  Serial.print("Temperature: "); 
+  Serial.print("Temperature (K): "); 
   Serial.print(getTemperature());
-  Serial.println(" K");
+  //Serial.println(" K");
 
   // Display fire distance
-  getFireDistance();
+  Serial.print("Fire distance: "); 
+  Serial.print(getFireDistance());
 
   // Display raindrop amount
   getRaindropAmount();
 
   // Display brightness
+  Serial.print("Brightness: "); 
   getBrightness();
 
   // Display gas amount
   getGasAmount();
-  delay(500);
+  delay(1000);
 }
