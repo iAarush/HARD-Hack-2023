@@ -111,6 +111,7 @@ void loop() {
   // Display gas amount
   getGasAmount();
   Serial.print(",");
+  Serial.println(""); 
 
   delay(1000);
 }
