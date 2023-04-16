@@ -1,0 +1,12 @@
+angleDif = 10
+angle = 0
+
+swivel {
+  if(angle >= openAngle) {
+    angleDif = -10
+  } else if(angle < 10) {
+    angleDif = 10;
+  }
+  angle += angleDif
+  servo1.write(angle)
+}
