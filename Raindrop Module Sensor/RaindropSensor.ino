@@ -11,8 +11,8 @@ void loop() {
 int getRaindropAmount() {
   int raindropAmount = analogRead(raindropPin);
 //  if (raindropAmount < 25)
-//    Serial.println("Raining");
+//    Serial.println("Wet");
 //  else
-//    Serial.println("Not Raining");
+//    Serial.println("Dry");
   return raindropAmount;
 }
